@@ -8,11 +8,11 @@ from datetime import datetime
 import tempfile
 
 app = Flask(__name__)
-app.secret_key = '123456'  # Change this to a secure secret key
+app.secret_key = os.getenv("FLASK_SECRET_KEY") # Change this to a secure secret key
 
 # Configure Google AI Studio API
-GOOGLE_API_KEY = ""  # Replace with your actual API key
-genai.configure(api_key=GOOGLE_API_KEY)
+API_KEY = os.getenv("GOOGLE_AI_API_KEY")# Replace with your actual API key
+genai.configure(api_key=API_KEY)
 
 # Initialize the model
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -222,3 +222,4 @@ if __name__ == '__main__':
     
 
     app.run(debug=True)
+
