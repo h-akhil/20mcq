@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY") # Change this to a secure secret key
 
 # Configure Google AI Studio API
-API_KEY = os.getenv("GOOGLE_AI_API_KEY")# Replace with your actual API key
+API_KEY= os.getenv("GOOGLE_AI_API_KEY")# Replace with your actual API key
 genai.configure(api_key=API_KEY)
 
 # Initialize the model
@@ -222,4 +222,5 @@ if __name__ == '__main__':
     
 
     app.run(debug=True)
+
 
