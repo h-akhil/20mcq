@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = '123456'  # Change this to a secure secret key
 
 # Configure Google AI Studio API
-GOOGLE_API_KEY = "AIzaSyC_MCBBE7I9D8L4M-8jKoXr7Id-aQhT7KE"  # Replace with your actual API key
+GOOGLE_API_KEY = ""  # Replace with your actual API key
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Initialize the model
@@ -220,4 +220,5 @@ if __name__ == '__main__':
     if not os.path.exists('templates'):
         os.makedirs('templates')
     
+
     app.run(debug=True)
